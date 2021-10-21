@@ -125,6 +125,10 @@ main .player--active .current {
   opacity: 1;
 }
 
+.hidden {
+  display: none;
+}
+
 .btn {
   position: absolute;
   left: 50%;
