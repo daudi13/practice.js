@@ -1,0 +1,82 @@
+
+
+main {
+    position: relative;
+    width: 100rem;
+    height: 60rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+
+    .player {
+        border-radius: 9px;
+        flex: 50%;
+        padding: 9rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.75s;
+        
+        .name {
+            position: relative;
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .score {
+            font-size: 8rem;
+            font-weight: 300;
+            text-transform: 300;
+            color: #c73657;
+            margin-bottom: 1rem;
+        }
+
+        .current {
+            margin-top: 18rem;
+            background-color: #c7365f;
+            opacity: 0.8;
+            border-radius: 9px;
+            color: #fff;
+            width: 65%;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.75s;
+
+            &-label {
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                font-size: 1.7rem;
+                color: #ddd;
+            }
+
+            &-score {
+                font-size: 3.5rem;
+            }
+        }
+
+        
+    }
+
+    .player--active {
+        background-color: rgba(255, 255, 255, 0.4);
+
+        .name {
+            font-weight: 700;
+        }
+
+        .score {
+            font-weight: 400;
+        }
+
+        .current {
+            opacity: 1;
+        }
+    }
+}
