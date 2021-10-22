@@ -1,6 +1,7 @@
 'use strict';
 
 const btnRoll = document.querySelector('.btn--roll');
+const btnHold = document.querySelector('.btn--hold');
 const scoreEl0 = document.getElementById('score--0');
 const scoreEl1 = document.getElementById('score--1');
 const currentEl0 = document.getElementById('current-score--0');
@@ -34,10 +35,21 @@ btnRoll.addEventListener('click', function () {
         currentScore += diceRoll;
         document.getElementById(`current-score--${activePlayer}`).innerHTML = currentScore;
     } else {
-        currentScore = 0
+        currentScore = 0;
+        document.getElementById(`current-score--${activePlayer}`).innerHTML = 0;
+        
         activePlayer = activePlayer === 1 ? 0 : 1;
         document.getElementById(`current-score--${activePlayer}`).innerHTML = currentScore;
         
     }
+
+    
+
 })
+
+//3. giving the hold btn functionality
+
+
+
+
 
