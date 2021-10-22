@@ -35,11 +35,14 @@ btnRoll.addEventListener('click', function () {
 
     if (diceRoll !== 1) {
         currentScore += diceRoll;
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
         document.getElementById(`current-score--${activePlayer}`).innerHTML = currentScore;
     } else {
         currentScore = 0;
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
         document.getElementById(`current-score--${activePlayer}`).innerHTML = 0;
         activePlayer = activePlayer === 1 ? 0 : 1;
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
         document.getElementById(`current-score--${activePlayer}`).innerHTML = currentScore;
         
     }
@@ -63,8 +66,10 @@ btnHold.addEventListener('click', function () {
         btnRoll.disabled = true;
     } else {
         currentScore = 0;
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
         document.getElementById(`current-score--${activePlayer}`).innerHTML = 0;
         activePlayer = activePlayer === 1 ? 0 : 1;
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
         document.getElementById(`current-score--${activePlayer}`).innerHTML = currentScore;
     }
 })
