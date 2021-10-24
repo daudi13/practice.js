@@ -2,6 +2,7 @@
 
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnNew = document.querySelector('.btn--new');
 const scoreEl0 = document.getElementById('score--0');
 const scoreEl1 = document.getElementById('score--1');
 const currentEl0 = document.getElementById('current-score--0');
@@ -63,6 +64,7 @@ btnHold.addEventListener('click', function () {
         document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
         document.getElementById(`score--${activePlayer}`).innerHTML = 100;
+        dice.classList.add('hidden')
         btnHold.disabled = true;
         btnRoll.disabled = true;
     } else {
@@ -75,7 +77,25 @@ btnHold.addEventListener('click', function () {
     }
 })
 
+// 4. giving the new game functionality
 
 
+btnNew.addEventListener('click', function () {
+    currentScore = 0;
+    activePlayer = 0;
+    scores[0] = 0;
+    scores[1] = 0;
+    currentEl0.innerHTML = currentScore;
+    currentEl1.innerHTML = currentScore;
+    scoreEl0.innerHTML = scores[0];
+    scoreEl1.innerHTML = scores[1];
+    // document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');
+    playerEl0.classList.remove(`player--winner`);
+    playerEl1.classList.remove('player--winner');
+    playerEl0.classList.add('player--active');
+    playerEl1.classList.remove('player--active');
+    btnRoll.disabled = false;
+    btnHold.disabled = false;
+})
 
 
