@@ -33,7 +33,7 @@ btnRoll.addEventListener('click', function () {
     dice.classList.remove('hidden');
     dice.src = `dice-${diceRoll}.png`
 
-    if (diceRoll !== 1) {
+    if (diceRoll !== 1 ) {
         currentScore += diceRoll;
         document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
         document.getElementById(`current-score--${activePlayer}`).innerHTML = currentScore;
@@ -60,8 +60,9 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`current-score--${activePlayer}`).innerHTML = 0;
 
     if (scores[activePlayer] >= 100) {
-        document.getElementById(`score--${activePlayer}`).innerHTML = 100;
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        document.getElementById(`score--${activePlayer}`).innerHTML = 100;
         btnHold.disabled = true;
         btnRoll.disabled = true;
     } else {
